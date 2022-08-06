@@ -1,0 +1,37 @@
+#include <iostream>
+void error() {
+    std::cout << "Uncorrect argument" << '\t';
+}
+int area(int lenght, int wight) {
+    if (lenght <= 0 || wight <= 0) {
+        error();
+        return 0;
+    }
+    else {
+        return lenght * wight;
+    }
+}
+
+int framed_area(int x, int y) {
+    const int framed_size = 1;
+    if (x - framed_size <= 0 || y - framed_size <= 0) {
+        error();
+        return 0;
+    }
+    else {
+        return (x - framed_size) * (y - framed_size);
+    }
+}
+int main() {
+    int x;
+    int y;
+    std:: cin >> x >> y;
+    int area1 = area(x, y);
+    int area2 = framed_area(1, y);
+    int area3 = framed_area(x, y);
+    double ratio = double(area1/area3);
+    std::cout << area1 << area2 << area3 << ratio << '\n';
+    return 0;
+
+}
+
