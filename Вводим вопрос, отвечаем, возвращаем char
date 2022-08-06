@@ -1,0 +1,14 @@
+#include <iostream>
+;char ask_user(std::string question) {
+    std::cout << question << " ? yes or no\n";
+    std::string answer = " ";
+    std::cin >> answer;
+    if (answer == "y" || answer == "yes") return 'y';
+    if (answer == "n" || answer == "no") return 'n';
+    return 'b';
+}
+int main() {
+    std::string question = "do u like it?";
+    std:: cout << ask_user(question) << std::endl;
+    return 0;
+}
