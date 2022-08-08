@@ -1,0 +1,18 @@
+#include <iostream>
+class Bad_area  {};
+int area (int length, int wight) {
+    if (length <= 0 || wight <= 0) throw Bad_area;
+    return length * wight;
+}
+int main() {
+    try {
+        int x = -1;
+        int y = 2;
+        int area1 = area(x, y);
+        std::cout << area1;
+    }
+    catch (Bad_area) {
+        std::cout << "OOOps\n";
+    }
+    return 0;
+}
